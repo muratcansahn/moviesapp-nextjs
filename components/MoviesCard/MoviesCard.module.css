@@ -1,0 +1,21 @@
+.moduletitle {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1250px;
+  margin: 0 auto;
+  padding: 50px 20px 20px 20px;
+}
+.cardbody {
+  margin: 0 20px;
+  width: calc(25% - 40px);
+  position: relative;
+}
