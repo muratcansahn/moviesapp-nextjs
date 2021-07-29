@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Head from "next/head";
 import MoviesCard from "../components/MoviesCard";
+import Carousel from "../components/Carousel";
+import TopRated from "../components/TopRated";
+import Navbar from "../components/Navbar";
+
 export default function Home() {
   const [movies, setMovies] = useState([]);
   console.log(movies);
@@ -14,9 +19,30 @@ export default function Home() {
 
   return (
     <div>
-      <MoviesCard movies={movies} />
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+          rel="stylesheet"
+        ></link>
 
-      <h3>POPÜLER FİLMLER</h3>
+        <link href="./css/style.css" rel="stylesheet" />
+      </Head>
+      <Navbar />
+      <div className="row pt-5 ">
+        <div className="col-md-9  ">
+          <Carousel movies={movies} />
+        </div>
+        <div className="col-md-3">
+          <TopRated />{" "}
+        </div>
+      </div>
+      <MoviesCard movies={movies} />
     </div>
   );
 }
